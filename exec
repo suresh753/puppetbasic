@@ -1,0 +1,17 @@
+using onlyif
+
+    exec {'bash /createplayer.sh' :
+      path => ['/usr/bin','/bin','/sbin'],
+      onlyif => '[ ! -f /home/messi ]',
+      }
+      
+     exec {'bash /createplayer.sh' :
+      path => ['/usr/bin','/bin','/sbin'],
+      unless => 'test -f /home/messi',
+      }
+      
+      
+
+
+
+using unless
